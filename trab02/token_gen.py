@@ -2,7 +2,7 @@ from token_gen_utils import *
 from datetime import datetime
 
 def generate_tokens(seed : str) -> list:
-    NUM_OF_TOKENS = 3
+    NUM_OF_TOKENS = 5
     tokens = []
     for _ in range(NUM_OF_TOKENS):
         current_min = datetime.now().minute
@@ -20,7 +20,8 @@ def request_loop(seed : str):
         if opt == 'q':
             break
         tokens = generate_tokens(seed)
-        print(tokens)
+        for token in tokens:
+            print(token)
 
 if __name__ == "__main__":
     arguments = parse_arguments()

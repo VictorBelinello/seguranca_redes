@@ -3,7 +3,7 @@ from datetime import datetime
 
 
 def generate_tokens(seed : str) -> list:
-    NUM_OF_TOKENS = 3
+    NUM_OF_TOKENS = 5
     tokens = []
     for _ in range(NUM_OF_TOKENS):
         current_min = datetime.now().minute
