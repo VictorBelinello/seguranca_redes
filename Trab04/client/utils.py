@@ -3,10 +3,12 @@ import json
 import requests
 from Crypto.Cipher import DES
 
+
 def pad(text):
     n = 8 - len(text) % 8
     print(n)
     return text + (b' ' * n)
+
 
 def get_tgt(user):
     partial = {
@@ -15,7 +17,7 @@ def get_tgt(user):
         "N1": randint(1, 100)
     },
     msg = json.dumps(partial).encode()
-    cipher = DES.new(b"FC4BFA51",DES.MODE_ECB)
+    cipher = DES.new(b"FC4BFA51", DES.MODE_ECB)
     msg = pad(msg)
     msg = cipher.encrypt(msg)
     m1 = {
